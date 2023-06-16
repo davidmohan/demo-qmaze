@@ -1,0 +1,97 @@
+$blue: #0080ff;
+$hover-blue: #4b9ced;
+$bg: #02014c;
+$bg-blur: #02014ce5; 
+
+.menubar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: $bg-blur;
+  padding: 25px 0 25px 0;  
+  color: #fff;
+  text-transform: uppercase;
+  position: fixed;
+  // filter: blur(50%);
+
+  &--brand {
+    font-weight: 700;
+  }
+
+  &--links {
+    font-weight: 600;
+
+    &--link {
+      padding: 0 10px 0 10px;
+      transition: 300ms;
+      cursor: pointer;
+
+      &:hover {
+        color: $blue;
+      }
+
+      &:nth-child(5) {
+        color: $blue;
+
+        &:hover {
+          color: $hover-blue;
+        }
+      }
+    }
+  }
+
+  &--btn {
+    display: none;
+  }
+}
+
+.collapse-nav {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menubar {
+    display: flex;
+    align-items: center;
+    position: static;
+    padding: 15px 0 15px 0;
+    background-color: $bg;
+
+    &--brand {
+      font-size: 25px;
+    }
+
+    &--links {
+      display: none;
+    }
+
+    &--btn {
+      display: block;
+      font-size: 25px;
+      cursor: pointer;
+    }
+  }
+
+  .collapse-nav {
+
+    &--link {
+      padding: 10px 0 10px 0;
+      font-size: 20px;
+      transition: 300ms;
+
+      &:hover {
+        background-color: #fff;
+        border-radius: 10px 0 0 10px;
+        color: $bg;
+        padding: 10px 0 10px 20px;
+      }
+    }
+  }
+
+  .toggle {
+    display: block;
+    background-color: $bg;
+    color: #fff;
+    padding: 0 0 10px 10%;
+  }
+}
